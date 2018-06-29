@@ -1,328 +1,95 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>超级玛丽</title>
-		<style>
-			*{
-			    padding:0;
-			    margin:0;
-			    box-sizing:border-box;
-			    border:none;
-			    }
-			ul,li{
-			    list-style:none;
-			    }
-			body{
-				overflow: hidden;
-			}
-			.box{
-				width:100%;
-				height:100vh;
-			}   
-			.top{
-				width:100%;
-				height:85%;
-				position: relative;
-			}  
-			.top>.ren{
-				width:100px;
-				height:200px;
-				position: absolute;
-				bottom:0;
-				left:0%;
-				z-index: 2;
-			}
-			.top>.ren>p{
-				width:50px;
-				height:50px;
-				border-radius: 50%;
-				background:#fff;
-				margin-left:25px;
-			}
-			.top>.ren>span{
-				height:150px;
-				width:20px;
-				background:#000;
-				display: block;
-				float: left;
-				transform-origin:top;
-			}
-			.top>.ren>span:nth-child(2){
-				margin-left:30px;
-				animation: name 1s linear 0s infinite alternate-reverse;
-			}
-			.top>.ren>span:nth-child(3){
-				margin-left:0px;
-				animation: name1 1s linear 0s infinite alternate-reverse;
-			}
-			@keyframes name{
-				from{transform: rotate(-30deg);}
-				to{transform: rotate(30deg);}
-			}
-			@keyframes name1{
-				from{transform: rotate(30deg);}
-				to{transform: rotate(-30deg);}
-			}
-			 
-			.bottom{
-				width:100%;
-				height:15%;
-				position: relative;
-			}
-			.bottom>ul{
-				width:100%;
-				height:calc(100% / 3);
-				position: absolute;
-				top:0;
-				left:0;
-			}   
-			.bottom>ul>li{
-				width:5%;
-				height:100%;
-				border: 1px solid #000;
-				float: left;
-			}
-			.bottom>ul:nth-child(3){
-				top:33px;
-			}
-			.bottom>ul:nth-child(4){
-				top:33px;
-			}
-			.bottom>ul:nth-child(5){
-				top:66px;
-			}
-			.bottom>ul:nth-child(6){
-				top:66px;
-			}
-			.bottom>ul>li{
-				background: goldenrod;
-				-webkit-box-shadow: 0px 0px 18px #000 inset;
-			}
-			.bottom>ul:nth-child(4){
-				transform: translate(-100px);
-			}
-			
-			.bottom1>ul:nth-child(2){
-				animation: lan 1.5s linear infinite;
-			}
-			.bottom1>ul:nth-child(4){
-				animation: lan 1.5s linear infinite;
-			}
-			.bottom1>ul:nth-child(6){
-				animation: lan 1.5s linear infinite;
-			}
-			.bottom2>ul:nth-child(2){
-				animation: lan1 1.5s linear infinite;
-			}
-			.bottom2>ul:nth-child(4){
-				animation: lan1 1.5s linear infinite;
-			}
-			.bottom2>ul:nth-child(6){
-				animation: lan1 1.5s linear infinite;
-			}
-            @keyframes lan {
-				0% {
-					left: 5%;
-				}
-				100% {
-					left: -5%;
-				}
-			}
-			 @keyframes lan1 {
-				0% {
-					left: -5%;
-				}
-				100% {
-					left: 5%;
-				}
-			}
-			
-			.beijing{
-				width:100%;
-				height:100%;
-				background:cornflowerblue;
-				position: absolute;
-				z-index: 0;
-				top:0;
-				left:0;
-				z-index: -3;
-			}
-			
-			.beijing2{
-				width:100%;
-				height:100%;
-				background:cornflowerblue;
-				position: absolute;
-				z-index: 0;
-				top:0;
-				left:0;
-				z-index: -1;
-			}
-			.beijing3{
-				animation: beijing 15s linear infinite;
-			}
-			.beijing2>.guandao2{
-				width:100px;
-				height:100px;
-				background:green;
-				position: absolute;
-				bottom:0;
-				z-index: -2;
-				left:800px;
-			}
-			.beijing2>.guandao2_1{
-				width:100px;
-				height:100px;
-				background:green;
-				position: absolute;
-				bottom:0;
-				z-index: -2;
-				right:0px;
-			}
-			.beijing2>p{
-				width:200px;
-				height:100px;
-				border-radius: 50%;
-				background:#fff;
-				position: absolute;
-				box-shadow:0px 0px 25px 2px #fff;
-			}
-			.beijing2>p:nth-child(3){
-				top:50px;
-				left:200px;
-			}
-			.beijing2>p:nth-child(4){
-				top:80px;
-				left:600px;
-			}
-			.beijing2>p:nth-child(5){
-				top:30px;
-				left:900px;
-			}
-			.beijing2>p:nth-child(6){
-				top:40px;
-				left:300px;
-			}
-			@keyframes beijing {
-				0% {
-					left: 100%;
-				}
-				100% {
-					left: -100%;
-				}
-			}
-			.taiyang{
-				width:120px;
-				height:120px;
-				border-radius: 50%;
-				background:red;
-				position: fixed;
-				top:50px;
-				right:20px;
-				box-shadow:0px 0px 25px 2px red;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="box">
-			<div class="top">
-				<div class="ren">
-				    <p></p>
-				    <span></span>
-				    <span></span>
-				</div>
-				<div class="beijing">
-				</div>
-				<div class="beijing2">
-					<div class="guandao2"></div>
-					<div class="guandao2_1"></div>
-					<p></p>
-					<p></p>
-					<p></p>
-					<p></p>
-				</div>
-			</div>
-			
-			<div class="bottom">
-				<ul></ul>
-				<ul></ul>
-				<ul></ul>
-				<ul></ul>
-				<ul></ul>
-				<ul></ul>
-			</div>
-		</div>
-		<div class="taiyang"></div>
-	</body>
-</html>
-<script>
-	function $(el) {
-     	var obj = document.querySelectorAll(el);
-		return obj.length > 1 ? obj : obj[0];
-	}
-    var obj = $(".ren"),
-        ren = {
-        	y:0,
-        	x:0
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录/注册</title>
+
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+            border: 0;
         }
-        
-    setInterval(function(){
-    	obj.style.bottom = ren.y + "px";
-    	obj.style.left = ren.x + "px";
-    	ren.y = 0;
-    },100)
-     
-    /*document.addEventListener("keydown",function(e){
-    	if(ren.y ==500) return;
-    	ren.y += 500;
-    })*/
+        .box{
+            width: 200px;
+            bottom: 50px;
+        }
+        .box>div{
+            width:100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+        .box>div button,.box>div input{
+            width: 100%;
+            height: 100%;
+            border:1px solid #000;
+        }
+        p{
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(238, 238, 238);">
+    <!-- 登录 -->
+     <div style="float:left;">
+    <div class="box">
+        <p>登录</p>
+        <div><input placeholder="用户名" class="username" type="text"></div>
+        <div><button class="denglu">登录</button></div>
+    </div>
+
+   </div>
     
-    for(var i = 0; i < $('.bottom ul').length; i++) {
-		for(var k = 0; k < 20; k++) {
-			$('.bottom ul')[i].innerHTML += "<li></li>"
-		}
-	}
-    /*左右动*/
-    document.addEventListener('keydown', function(e) {
-		var e = e || emevent,
-			ke = e.keyCode;
-		if(ke == 39) {
-			ren.x += 50;
-			$('.ren').style.left = ren.x + 'px';
-			$('.ren').style.transition = "1s";
-			if(ren.x >= 1266){
-				ren.x = 1266;
-			}
-			
-			
-		} else if(ke == 37) {
-			if(ren.x <= 50){
-				ren.x = 50;
-			}
-			ren.x -=50;
-			$('.ren').style.left = ren.x + 'px';
-			$('.ren').style.transition = "1s";
-		} else if(ke == 38){
-			ren.y =240;
-			$('.ren').style.bottom = ren.y + 'px';			 
-			$('.ren').style.transition = "1s";
-			if(ren.y ==240) return;
-		} 
-		
-		
-		if(ke == 39) {
-			$(".box>div:nth-child(2)").classList.add("bottom1");
-			$(".top>div:nth-child(3)").classList.add("beijing3");
-		} else{
-			$(".box>div:nth-child(2)").classList.remove("bottom1");
-		}
-		if(ke == 37) {
-			$(".box>div:nth-child(2)").classList.add("bottom2");
-		} else{
-			$(".box>div:nth-child(2)").classList.remove("bottom2");
-		}
-	})
+    <style>
+        .sp_w>div{
+            width: 100px;
+            height: 30px;
+            float: left;
+        }
+        .sp_w input {
+            width:100%;
+            height: 100%;
+            border: 1px solid #000;
+        }
+        .sp_del{
+            background-color:red;
+            text-align: center;
+            line-height:30px;
+            cursor: pointer;
+            border: 1px solid red;
+        }
+    </style>
+    <!-- 添加产品 -->
+    <div  style="float:left;margin-left:30px;">
+    <p class="wow"></p>
+    <div class="sp_box">
+        
+    </div>
+    <div><button style="width:100px;height:30px;margin-top:20px;" class="jx_tianjia">添加</button></div>
+    </div>
 
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
-</script>
+    <script type="text/javascript">
+        $(".denglu").click(function(){
+            $.ajax({
+                url:"fasongmail.php",
+                type:"post",
+                data:{
+                    "shuzi":$(".username").val()
+                },
+                success:function(res){
+                    console.log(res);
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>
